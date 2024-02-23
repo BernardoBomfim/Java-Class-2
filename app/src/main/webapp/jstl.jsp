@@ -14,10 +14,23 @@
 
         <%
             int[] nums = {1,2,3};
+            request.setAttribute("nums",nums);
         %>
 
         <c:forEach var="n" items="${nums}">
             ${cont} <br />
         </c:forEach>
+
+        <h1>IF</h1>
+        <c:forEach var="item" begin="1" end="10">
+            <c:if test="${item % 2 == 0}">
+            ${item}<br />
+        </c:if>
+        </c:forEach>
+
+        <h1> tokens</h1>
+        <c:forTokens var="fruta" items="maçã, manga, melão" delims=",">
+            ${fruta} <br/>
+        </c:forTokens>
     </body>
 </html>
